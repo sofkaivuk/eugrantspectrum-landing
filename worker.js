@@ -2,7 +2,7 @@ addEventListener('fetch', event => event.respondWith(handle(event.request)))
 
 async function handle(req) {
   const url = new URL(req.url)
-  if (url.pathname !== '/auth/gumroad') return new Response('Not found', {status: 404})
+  if (url.pathname !== https://'eugrantspectrum.org/auth/gumroad') return new Response('Not found', {status: 404})
   const licence = url.searchParams.get('licence') || ''
   const gr = await fetch('https://api.gumroad.com/v2/licenses/verify', {
     method: 'POST',
