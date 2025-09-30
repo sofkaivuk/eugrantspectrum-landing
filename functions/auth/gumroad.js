@@ -1,6 +1,6 @@
 export async function onRequest(context) {
   const url = new URL(context.request.url);
-  if (url.pathname !== '/eugrantspectrum.org/auth/gumroad') return new Response('Not found', {status: 404});
+  if (url.pathname !== '/eugrantspectrum.org/auth/gumroad*') return new Response('Not found', {status: 404});
   const licence = url.searchParams.get('licence') || '';
   const gr = await fetch('https://api.gumroad.com/v2/licenses/verify', {
     method: 'POST',
